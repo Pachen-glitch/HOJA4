@@ -1,3 +1,13 @@
+/*
+Hoja de Trabajo 4
+Jorge Martinez Cambara 
+Quique Bran
+ 
+
+
+*/
+
+
 package main.java;
 import main.java.domain.Stack;
 import main.java.structure.*;
