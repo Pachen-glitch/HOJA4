@@ -1,0 +1,14 @@
+structure\DoublyLinkedList$Node.class
+structure\DoublyLinkedList.class
+App.class
+structure\ListStack.class
+domain\ListADT.class
+service\PostfixEvaluator.class
+structure\VectorStack.class
+domain\AbstractList.class
+structure\SinglyLinkedList.class
+domain\Stack.class
+structure\SinglyLinkedList$Node.class
+domain\AbstractStack.class
+structure\ArrayListStack.class
+service\InfixToPostfixConverter.class

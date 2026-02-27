@@ -1,0 +1,8 @@
+service\PostfixEvaluatorTest.class
+structure\ListStackTest.class
+structure\ArrayListStackTest.class
+structure\SinglyLinkedListTest.class
+structure\DoublyLinkedListTest.class
+service\InfixToPostfixConverterTest.class
+IntegrationTest.class
+structure\VectorStackTest.class

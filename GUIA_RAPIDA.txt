@@ -1,0 +1,203 @@
+================================================================================
+                    GUÍA RÁPIDA - PRUEBAS UNITARIAS
+           Infix to Postfix Converter - 91 Pruebas Exitosas
+================================================================================
+
+✅ ESTADO: TODAS LAS PRUEBAS PASAN (91/91)
+
+================================================================================
+1. EJECUTAR LAS PRUEBAS
+================================================================================
+
+OPCIÓN A - Windows PowerShell:
+  cd c:\Users\Admin\Documents\HOJA4\INFIXTOPOSTFIX
+  powershell -ExecutionPolicy Bypass -File run_tests.ps1
+  
+  O simplemente:
+  mvn clean test
+
+OPCIÓN B - Windows CMD:
+  cd c:\Users\Admin\Documents\HOJA4\INFIXTOPOSTFIX
+  run_tests.bat
+
+OPCIÓN C - Linux/Mac:
+  cd ~/HOJA4/INFIXTOPOSTFIX
+  bash run_tests.sh
+
+OPCIÓN D - IDE (IntelliJ, Eclipse, VSCode):
+  1. Abrir proyecto
+  2. Click derecho en: src/test/java
+  3. Seleccionar: Run All Tests
+
+================================================================================
+2. ARCHIVOS DE PRUEBA
+================================================================================
+
+src/test/java/IntegrationTest.java (8 pruebas)
+  → Prueba flujo completo: Infix → Postfix → Evaluación
+
+src/test/java/service/InfixToPostfixConverterTest.java (15 pruebas)
+  → Conversión de notación infix a postfix
+
+src/test/java/service/PostfixEvaluatorTest.java (15 pruebas)
+  → Evaluación de expresiones postfix
+
+src/test/java/structure/ArrayListStackTest.java (10 pruebas)
+  → Pila basada en ArrayList
+
+src/test/java/structure/ListStackTest.java (10 pruebas)
+  → Pila basada en LinkedList
+
+src/test/java/structure/VectorStackTest.java (11 pruebas)
+  → Pila basada en Vector
+
+src/test/java/structure/SinglyLinkedListTest.java (11 pruebas)
+  → Lista enlazada simple
+
+src/test/java/structure/DoublyLinkedListTest.java (11 pruebas)
+  → Lista doblemente enlazada
+
+TOTAL: 8 archivos de prueba, 91 pruebas
+
+================================================================================
+3. RESULTADOS
+================================================================================
+
+BUILD SUCCESS ✅
+
+Tests run:      91
+Failures:       0  ✅
+Errors:         0  ✅
+Skipped:        0
+Warnings:       0  ✅
+
+Tiempo de ejecución: ~1 segundo
+
+================================================================================
+4. COMANDOS MAVEN ÚTILES
+================================================================================
+
+# Pruebas básicas
+mvn clean test
+
+# Con más verbosidad
+mvn clean test -X
+
+# Pruebas de una clase específica
+mvn clean test -Dtest=ArrayListStackTest
+
+# Pruebas de un método específico
+mvn clean test -Dtest=ArrayListStackTest#testPushAddElement
+
+# Ver reportes
+mvn surefire-report:report
+
+# Cobertura de código (requiere jacoco)
+mvn clean test jacoco:report
+
+================================================================================
+5. ARCHIVOS DE DOCUMENTACIÓN
+================================================================================
+
+PRUEBAS_RESUMEN.md    → Resumen completo en español
+TESTING_GUIDE.md      → Guía técnica detallada
+TEST_RESULTS.md       → Resultados detallados de todas las pruebas
+pom.xml              → Configuración de dependencias Maven
+src/main/java/       → Código fuente
+src/test/java/       → Pruebas unitarias
+
+================================================================================
+6. REQUISITOS
+================================================================================
+
+✓ Java 11 o superior
+✓ Maven 3.6 o superior
+✓ Maven debe estar en el PATH del sistema
+
+Verificar:
+  java -version
+  mvn -version
+
+================================================================================
+7. EJEMPLOS DE USO
+================================================================================
+
+EJEMPLO 1: Conversión simple
+  Entrada: "2+3*4"
+  Salida: "2 3 4 * +"
+  Evaluación: 14 ✅
+
+EJEMPLO 2: Con paréntesis
+  Entrada: "(2+3)*4"
+  Salida: "2 3 + 4 *"
+  Evaluación: 20 ✅
+
+EJEMPLO 3: Todas operaciones
+  Entrada: "5+3*2-8/4^2"
+  Salida: "5 3 2 * + 8 4 2 ^ / -"
+  Evaluación: Correcta ✅
+
+================================================================================
+8. TROUBLESHOOTING
+================================================================================
+
+Problema: "mvn no reconocido"
+Solución: Instalar Maven o agregarlo al PATH
+
+Problema: "Error compilación - símbolo no encontrado"
+Solución: Ejecutar "mvn clean compile" nuevamente
+
+Problema: Una prueba falla
+Solución: Ejecutar la prueba específica con -Dtest=NombreClase
+
+Problema: Puerto en uso (si ejecutas servidor)
+Solución: Cambiar puerto en código o terminar proceso anterior
+
+================================================================================
+9. ESTRUCTURA DE CARPETAS
+================================================================================
+
+INFIXTOPOSTFIX/
+│
+├── pom.xml (Maven config)
+├── PRUEBAS_RESUMEN.md (Este archivo resumido)
+├── TESTING_GUIDE.md (Guía detallada)
+├── TEST_RESULTS.md (Resultados completos)
+├── run_tests.bat (Script Windows)
+├── run_tests.ps1 (Script PowerShell)
+├── run_tests.sh (Script Linux/Mac)
+│
+├── src/
+│   ├── main/java/ (Código fuente)
+│   │   ├── domain/ (Interfaces)
+│   │   ├── service/ (Conversión y evaluación)
+│   │   ├── structure/ (Pilas y listas)
+│   │   └── app/ (Aplicación principal)
+│   └── test/java/ (Pruebas)
+│       ├── IntegrationTest.java
+│       ├── service/
+│       └── structure/
+│
+└── target/ (Generado tras compilación)
+    ├── classes/
+    └── surefire-reports/ (Reportes HTML)
+
+================================================================================
+10. PRÓXIMOS PASOS
+================================================================================
+
+✓ Todas las pruebas pasan exitosamente
+✓ El código está listo para usar
+✓ Nuevas pruebas pueden agregarse en src/test/java/
+
+Opcionales:
+  - Generar reportes HTML: mvn surefire-report:report
+  - Medir cobertura: mvn jacoco:report
+  - Ejecutar aplicación: mvn exec:java -Dexec.mainClass="app.Main"
+
+================================================================================
+
+Creado: 27 de Febrero de 2026
+Estado: ✅ LISTO PARA USAR - 91/91 PRUEBAS EXITOSAS
+
+================================================================================
